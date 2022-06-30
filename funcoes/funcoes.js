@@ -40,6 +40,16 @@ const Verfica_coluna = (tabuleiro) =>{
         return false
     }
 }
+const Verifica_vencedor = (tabuleiro) => {
+    if((Verfica_diagonal(tabuleiro) == false &&
+    Verfica_coluna(tabuleiro) == false  &&
+    Verfica_linha(tabuleiro) == false)) {
+        return false
+    }else{
+        return true
+    }
+}
+
 const Realizar_jogada = (jogador, matriz) =>{
     console.log("Vez do: "+ jogador+" Jogador\n")
     let linha = Number(read.question("Digite a linha da jogada: "))
@@ -58,4 +68,4 @@ const Realizar_jogada = (jogador, matriz) =>{
     }
 }
 
-export {Exibir_tabuleiro, Verfica_diagonal, Verfica_linha, Verfica_coluna, Realizar_jogada};
+export {Exibir_tabuleiro, Verifica_vencedor, Realizar_jogada};
